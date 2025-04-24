@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alpha Centauri</title>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="favicon1.ico">
+    <style>
+        
+        h1, h2, h4, h3, h5 {
+            text-align: center;
+        }
+        #header {
+          z-index: -1;
+          color:dodgerblue;
+          background-color: #2f323aff;
+          background-image: linear-gradient(to bottom right, #2F323A, #B284BE);
+          border-radius: 5px;
+        }
+        .blackOverride {
+            color:#2f323aff;
+            background: none;
+        }
+        p {
+            margin:4.5%;
+            border: 5px dodgerblue solid;
+            border-radius: 5px;
+            padding: 3%;
+        }
+        .miniFavi {
+          width: 24px;
+          overflow: visible;
+          text-align: center;
+          margin: auto;
+        }
+        .para1 {
+            width: 75%;
+            position: relative;
+            align-items:center;
+            margin: auto;
+        }
+        .container {
+  display: inline-block;
+  cursor: pointer;
+  position: sticky;
+  top: 0;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+
+/* Fade out the second bar */
+.change .bar2 {opacity: 0;}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: translate(0, -11px) rotate(45deg);
+}
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 250px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  display: none;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+*{
+    font-family: "Lucida Console", "Courier New";
+}
+    </style>
+</head>
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+      </div>
+      
+    <div id="main">
+        <div id="header">
+        <h1>Alpha Centauri<img src="favicon1.ico" class="miniFavi" alt=":0"></h1>
+        
+        <h3>Explaining Computational Topics in Web Form</h3>
+        <h4>Jacob Reutter</h4>
+    </div>
+    <div class="container" onclick="myFunction(this)">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
+        <div class="para1">
+            <p>Welcome! This website shall walk you through important things to learn about computers to better educate the public. 
+            Stick around and you'll get a built-in fun game!</p>
+        </div>
+        <div class="para1">
+            <h4>Spreadsheets</h4>
+        </div>
+        <p>Google Sheets is an important tool for 
+            arranging numbers and doing operations with them
+            in a convienent way that is not visually repulsive.
+            
+    </div>
+    <script>
+    qwe = false;
+    document.body.style.backgroundColor = "#F0FFFF";
+    document.getElementById("mySidenav").style.display == "none";
+    function myFunction(x) {
+        if (document.getElementById("mySidenav").style.display == "none"){
+            x.classList.toggle("change");
+            document.getElementById("mySidenav").style.display = "inline";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(50, 55, 55,0.4)";
+        }else{
+          x.classList.toggle("change");
+          document.getElementById("mySidenav").style.display = "none";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "#F0FFFF";
+        }
+      }</script>
+</body>
+</html>
