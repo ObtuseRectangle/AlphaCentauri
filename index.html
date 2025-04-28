@@ -39,8 +39,11 @@
             align-items:center;
             margin: auto;
         }
+        h3 {
+          color: #B284BE;
+        }
         td, th {
-            border: 2px dodgerblue solid;
+            border: 3px #B284BE solid;
             border-radius: 3px;
         }
         .container {
@@ -79,7 +82,7 @@
   top: 0; /* Stay at the top */
   left: 0;
   display: none;
-  background-color: #111; /* Black*/
+  background-color: #2f323aff; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -127,9 +130,9 @@
 </head>
 <body>
     <div id="mySidenav" class="sidenav">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
+        <a onclick="()=>{console.log(0)};document.getElementById('header').scrollIntoView();myFunction(document.getElementsByClassName('container')[0]);">Main</a>
+        <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Spreadsheets').scrollIntoView();">Spreadsheets</a>
+        <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Gmail').scrollIntoView();">Gmail</a>
         <a href="#">Contact</a>
       </div>
       
@@ -154,7 +157,7 @@
         </div>
         <p>Google Sheets is an important tool for 
             arranging numbers and doing operations with them
-            in a convienent way that is not visually repulsive. But the table feature alone only does what html can do.</p>
+            in a convienent way that is not visually repulsive. But the table feature alone only does what HTML can do.</p>
         <table>
             <tr>
                 <th>There's</th>
@@ -178,6 +181,10 @@
         with this by using a function, like + or SUM(). </p>
         <p>Furthermore, conditional logic lets you do a certain thing if something happens, for example a different function
         depending on the data input or highlighting a different color depending on the value.</p>
+        <figure>
+        <img src="Screenshot_28-4-2025_121455_docs.google.com.jpeg" >
+        <caption> A screenshot of Google Sheets</caption>
+        </figure>
         <div class="para1"><h3>Gmail</h3></div>
         <p>Gmail is an important tool in instant conversation. </p>
     </div>
@@ -186,17 +193,33 @@
     document.body.style.backgroundColor = "#F0FFFF";
     document.getElementById("mySidenav").style.display == "none";
     function myFunction(x) {
-        if (document.getElementById("mySidenav").style.display == "none"){
-            x.classList.toggle("change");
-            document.getElementById("mySidenav").style.display = "inline";
-            document.getElementById("main").style.marginLeft = "250px";
-            document.body.style.backgroundColor = "rgba(50, 55, 55,0.4)";
-        }else{
-          x.classList.toggle("change");
-          document.getElementById("mySidenav").style.display = "none";
-            document.getElementById("main").style.marginLeft = "0";
-            document.body.style.backgroundColor = "#F0FFFF";
+      if (qwe == false){
+        x.classList.toggle("change");
+        console.log("Open")
+        document.getElementById("mySidenav").style.display = "inline";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(50, 55, 55,0.4)";
+        qwe = true;
+      }else{
+        console.log("Close")
+        qwe = false;
+        x.classList.toggle("change");
+        document.getElementById("mySidenav").style.display = "none";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "#F0FFFF";
+      };
+    }
+    function getElementByInnerHTML(text) {
+      console.log("Hi")
+      var aTags = document.querySelectorAll("h3");
+      var searchText = text;
+      console.log(aTags)
+      for (var i = 0; i < aTags.length; i++) {
+        if (aTags[i].innerHTML == searchText) {
+          console.log(aTags[i])
+          return aTags[i];
         }
-      }</script>
+      }
+    }</script>
 </body>
 </html>
