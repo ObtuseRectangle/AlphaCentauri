@@ -6,9 +6,10 @@
     <meta charset="utf-8">
     <link rel="icon" type="image/x-icon" href="favicon1.ico">
     <style>
-        
+        @font-face { font-family: PunkKid; src: url('punk_kid.ttf'); } 
         h1, h2, h4, h3, h5 {
             text-align: center;
+            font-family: PunkKid;
         }
         #header {
           z-index: -1;
@@ -39,18 +40,49 @@
             align-items:center;
             margin: auto;
         }
-        h3 {
+        h2 {
           color: #B284BE;
+          border-bottom: #B284BE 3px solid;
+          font-size: xx-large;
         }
         td, th {
             border: 3px #B284BE solid;
             border-radius: 3px;
+        }
+        @keyframes blink {
+          0% {color: #2F323A;}
+          1% {color: transparent;}
+          49% {color: transparent;}
+          50% {color: transparent;}
+          51% {color: #2F323A;}
+          99% {color: #2F323A;}
+        }
+        @keyframes falling {
+          0% {transform: translateY(-400px);}
+          100% {transform: translateY(400px);}
+        }
+        .blinkingBar {
+          animation-name: blink;
+          animation-duration: 1s;
+          animation-iteration-count: infinite;
+        }
+        img {
+          width: 99%;
+        }
+        img.bitcoin {
+          width: 0px;
+        }
+        .fallingBitcoin {
+          animation-name: falling;
+          animation-duration: 10s;
         }
         .container {
   display: inline-block;
   cursor: pointer;
   position: sticky;
   top: 0;
+  padding:20px;
+  background-color: #F0FFFF;
 }
 
 .bar1, .bar2, .bar3 {
@@ -133,14 +165,16 @@
         <a onclick="()=>{console.log(0)};document.getElementById('header').scrollIntoView();myFunction(document.getElementsByClassName('container')[0]);">Main</a>
         <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Spreadsheets').scrollIntoView();">Spreadsheets</a>
         <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Gmail').scrollIntoView();">Gmail</a>
+        <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Digital Currency').scrollIntoView();">Digital Currency</a>
+        <a onclick="()=>{console.log(0)};myFunction(document.getElementsByClassName('container')[0]);getElementByInnerHTML('Word Processing').scrollIntoView();">Word Processing</a>
         <a href="#">Contact</a>
       </div>
       
     <div id="main">
         <div id="header">
-        <h1>Alpha Centauri<img src="favicon1.ico" class="miniFavi" alt=":0"></h1>
+        <h1>Alpha Centaur i<img src="favicon1.ico" class="miniFavi" alt=":0"></h1>
         
-        <h3>Explaining Computational Topics in Web Form</h3>
+        <h2>Explaining&nbsp; Co m putational&nbsp; Topics&nbsp; in &nbsp;Web &nbsp;For m</h2>
         <h4>Jacob Reutter</h4>
     </div>
     <div class="container" onclick="myFunction(this)">
@@ -153,26 +187,26 @@
             Stick around and you'll get a built-in fun game!</p>
         </div>
         <div class="para1">
-            <h3>Spreadsheets</h3>
+            <h2>Spreadsheets</h2>
         </div>
         <p>Google Sheets is an important tool for 
             arranging numbers and doing operations with them
             in a convienent way that is not visually repulsive. But the table feature alone only does what HTML can do.</p>
         <table>
             <tr>
-                <th>There's</th>
-                <th>A</th>
-                <th>Lot</th>
+                <th onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">There's</th>
+                <th onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">A</th>
+                <th onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">Lot</th>
             </tr>
             <tr>
-                <th>More</th>
-                <td>You</td>
-                <td>Can</td>
+                <th onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">More</th>
+                <td onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">You</td>
+                <td onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">Can</td>
             </tr>
             <tr>
-                <th>Do</th>
-                <td>Than</td>
-                <td>This.</td>
+                <th onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">Do</th>
+                <td onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">Than</td>
+                <td onmouseover="this.style.backgroundColor = 'dodgerblue'" onmouseleave="this.style.backgroundColor = 'transparent'">This.</td>
             </tr>
         </table>
         <p>One main feature is that you can use formulas. While HTML can do the very same thing, it's pretty easy to do.
@@ -185,11 +219,34 @@
         <img src="Screenshot_28-4-2025_121455_docs.google.com.jpeg" >
         <caption> A screenshot of Google Sheets</caption>
         </figure>
-        <div class="para1"><h3>Gmail</h3></div>
-        <p>Gmail is an important tool in instant conversation. </p>
-    </div>
+        <div class="para1"><h2>Gmail</h2></div>
+        <p>Email, short for electronic mail, is a method of exchanging digital messages over the internet. It allows users to send and receive text, documents, images, and other files instantly across the globe. Email is a fundamental tool in both personal and professional communication. It is widely used in workplaces to coordinate projects, share updates, and maintain records of correspondence.
+        </p><p>One of the key advantages of email is its speed—messages are delivered within seconds, regardless of the sender's or recipient's location. It also offers convenience, as users can access their inbox from computers, smartphones, or tablets. Many email services provide features like spam filtering, automatic replies, and folders to organize messages efficiently.
+        </p><p>Email is important because it serves as a formal channel of communication, especially in business and education. It is often used to apply for jobs, communicate with customers, confirm appointments, and distribute newsletters. In education, teachers and students use email to exchange assignments, feedback, and announcements.
+        </p><p>Despite the rise of messaging apps, email remains essential due to its formality and versatility. It creates a written record of conversations, which can be crucial for legal or administrative purposes. Businesses rely on email marketing to reach potential clients and promote their products. On a daily basis, millions of people check their email to stay informed, connected, and organized.</p>
+        <div class="para1"><h2>Digital Currency</h2></div>
+        <img src="bestBitcoin.png" class="bitcoin">
+        <img src="bestBitcoin.png" class="bitcoin">
+        <img src="bestBitcoin.png" class="bitcoin">
+        <img src="bestBitcoin.png" class="bitcoin">
+        <img src="bestBitcoin.png" class="bitcoin">
+        <p>Digital currency is a form of money that exists only in electronic form and is not physical like coins or paper bills. It can be used to buy goods and services online or in person, just like traditional currency. Digital currency is often stored in digital wallets, which can be accessed through computers or smartphones.</p>
+        <p>There are two main types of digital currency: centralized and decentralized. Centralized digital currencies, like those issued by banks or governments, are controlled by a central authority. Decentralized digital currencies, such as Bitcoin and Ethereum, operate on a blockchain and are not controlled by any single organization.</p>         
+        <p>Digital currency is important because it offers fast, secure, and often low-cost transactions. It allows people to send money across borders in minutes, without the need for banks or physical cash. This makes it especially useful for people in countries with limited access to traditional banking services.</p>
+        <p>Every day, individuals use digital currency to invest, make purchases, transfer funds, or participate in online communities. Businesses also accept digital currency as a form of payment, and some countries are developing official digital versions of their national currencies.</p>          
+        <p>Security and privacy are major reasons why people are interested in digital currency, although these benefits depend on how the currency is designed and used. At the same time, governments are working on creating rules to manage its use and prevent illegal activity. As technology continues to evolve, digital currency is expected to play a bigger role in the global economy.</p>
+        <div class="para1"><h2>Word Processing</h2></div>
+        <p>Word-processing applications are software programs designed to help users create, edit, format, and print text-based documents. Popular examples include Microsoft Word, Google Docs, and Apple Pages. These applications are essential tools for writing letters, reports, essays, resumes, and many other types of documents. They offer a wide range of features that make document creation more efficient, such as spell check, grammar check, text formatting, and the ability to insert tables, images, and links.</p>
+        <figure><img src="Screenshot_1-5-2025_113437_docs.google.com.jpeg"><caption>A demonstration of Google Docs</caption></figure>
+        <p>One of the key advantages of word-processing applications is their ability to provide a digital workspace where users can easily make changes to a document. Unlike traditional typewriters, which required manual correction or rewriting, word-processing software allows for instant editing. It also enables users to save their work, so it can be accessed and modified later.</p>
+        <p>Word processors are important because they save time, improve productivity, and offer tools for collaboration. Features like "track changes" and comments make it easy for multiple people to review and edit a document. This is particularly helpful in professional environments where teamwork is crucial, such as in offices, schools, and legal or publishing industries.</p>
+        <p>Every day, people such as me use word-processing applications to write emails, create presentations, draft articles, or maintain personal documents like journals or notes. In education, students rely on word processors for writing essays, completing assignments, and preparing reports. In business, professionals use word-processing software to draft contracts, presentations, and marketing materials.</p>
+        <p>Word-processing applications have become even more powerful with cloud-based versions, which allow users to access their documents from any device with an internet connection. These applications have revolutionized how people create and share documents, making them indispensable in both personal and professional settings.
+          <span class="blinkingBar"><b>|</b></span></p>
+      </div>
     <script>
     qwe = false;
+    const delay = ms => new Promise(res => setTimeout(res, ms));
     document.body.style.backgroundColor = "#F0FFFF";
     document.getElementById("mySidenav").style.display == "none";
     function myFunction(x) {
@@ -211,7 +268,7 @@
     }
     function getElementByInnerHTML(text) {
       console.log("Hi")
-      var aTags = document.querySelectorAll("h3");
+      var aTags = document.querySelectorAll("h2");
       var searchText = text;
       console.log(aTags)
       for (var i = 0; i < aTags.length; i++) {
@@ -220,6 +277,21 @@
           return aTags[i];
         }
       }
-    }</script>
+    }
+    const BitcoinWait = async () => {
+      var element = getElementByInnerHTML("Digital Currency");
+      var position = element.getBoundingClientRect();
+      if(position.top < window.innerHeight && position.bottom >= 0) {
+        thingsToMove = document.getElementsByClassName("bitcoin")
+        console.log(thingsToMove)
+        for(item in thingsToMove) {
+          item.top = Math.random()*Math.abs(window.screen.width-10)
+          await delay(Math.random()*1000);
+          item.width = "5%";
+          item.classList.add("fallingBitcoin")
+        }
+      }
+    }
+    window.addEventListener('scroll', BitcoinWait);</script>
 </body>
 </html>
