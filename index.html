@@ -480,10 +480,9 @@
       var position = element.getBoundingClientRect();
       if(position.top < window.innerHeight && position.bottom >= 0) {
         thingsToMove = document.getElementsByClassName("bitcoin")
-        console.log(thingsToMove)
         for(item of thingsToMove) {
           console.log(screen.width.toString()+"px")
-          item.style.right = (screen.width*Math.random()).toString()+"px"
+          item.style.right = (Math.abs(screen.width*Math.random()-10)).toString()+"px"
           await delay(Math.random()*100);
           item.style.width = "5%";
           item.style.height = "10%";
