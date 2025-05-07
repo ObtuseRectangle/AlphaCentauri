@@ -78,6 +78,11 @@
           animation-duration: 10s;
           animation-iteration-count: infinite;
         }
+        #gameWindow {
+          width: 95%;
+          border: 2px solid #2F323A;
+          height: 58.7;
+        }
         .container {
   display: inline-block;
   cursor: pointer;
@@ -177,7 +182,7 @@
         <div id="header">
         <h1>Obtuse Rectangle<img src="favicon1.ico" class="miniFavi" alt=":0"></h1>
         
-        <h2>Explaining&nbsp; Co m putational&nbsp; Topics&nbsp; in &nbsp;Web &nbsp;For m</h2>
+        <h2>Explaining&nbsp; Computational&nbsp; Topics&nbsp; in &nbsp;Web &nbsp;For m</h2>
         <h4>Jacob Reutter</h4>
     </div>
     <div class="container" onclick="myFunction(this)">
@@ -186,8 +191,8 @@
       <div class="bar3"></div>
     </div>
         <div class="para1">
-            <p>Welcome! This website shall walk you through important things to learn about computers to better educate the public. 
-            Stick around and you'll get a built-in fun game!</p>
+            <p>Howdy do. This website is created just to educate the public about the interweb. Few enough people these days know how to use computers, and it is easy for them to fall behind in this day and age. Thus, in order to benefit society, it is necessary for these websites to help those who know nothing of computers.  
+            Plus, stick around and you'll get a built-in fun game, just for incentivision to read this!</p>
         </div>
         <div class="para1">
             <h2>Spreadsheets</h2>
@@ -226,7 +231,7 @@
         <p>Email, short for electronic mail, is a method of exchanging digital messages over the internet. It allows users to send and receive text, documents, images, and other files instantly across the globe. Email is a fundamental tool in both personal and professional communication. It is widely used in workplaces to coordinate projects, share updates, and maintain records of correspondence.
         </p><p>One of the key advantages of email is its speed—messages are delivered within seconds, regardless of the sender's or recipient's location. It also offers convenience, as users can access their inbox from computers, smartphones, or tablets. Many email services provide features like spam filtering, automatic replies, and folders to organize messages efficiently.
         </p><p>Email is important because it serves as a formal channel of communication, especially in business and education. It is often used to apply for jobs, communicate with customers, confirm appointments, and distribute newsletters. In education, teachers and students use email to exchange assignments, feedback, and announcements.
-        </p><p>Despite the rise of messaging apps, email remains essential due to its formality and versatility. It creates a written record of conversations, which can be crucial for legal or administrative purposes. Businesses rely on email marketing to reach potential clients and promote their products. On a daily basis, millions of people check their email to stay informed, connected, and organized.</p>
+        </p><p>Despite the rise of messaging apps, email remains essential due to its formality and versatility. It creates a written record of conversations, which can be crucial for legal or administrative purposes. Businesses rely on email marketing to reach potential clients and promote their products. On a daily basis, millions of people, including me, check their email to stay informed, connected, and organized.</p>
         <div class="para1"><h2>Digital Currency</h2></div>
         <img src="bestBitcoin.png" class="bitcoin">
         <img src="bestBitcoin.png" class="bitcoin">
@@ -447,6 +452,8 @@
         <p>The most challenging part of the course was making this website. There are over 500 lines of code, and it takes serious thought to make this. You can't just throw things together; it's a logic puzzle of its own.</p>
         <p>Computer skills are very helpful in the future. For one, I could easily make a living coding for a company like NASA or Microsoft. It just takes the same work I'm doing now, just in a different language. Maybe I will take a computer science class someday and this will help. But what is for certain, I will be coding a lot in the future. This will have served as an excellent refresher to do more things, like websites, games, and code for robots.</p>
         <figure><img src="Screenshot_5-5-2025_114032_vscode.dev.jpeg"><caption>This is the code for this website. It shows skill in coding, web browsing, and logic. I like it because it was fun to code this.</caption></figure>
+        <!--<p>Now, I promised a game, didn't I? Well, without any further ado, here it is.</p>
+        <span id="gameWindow"></span>-->
       </div>
     <script>
     qwe = false;
@@ -497,6 +504,62 @@
         }
       }
     }
-    window.addEventListener('scroll', BitcoinWait);</script>
+    window.addEventListener('scroll', BitcoinWait);
+    //====Game part====
+
+    //variables
+
+    //player
+    class Player {
+      hp = 100;
+      maxhp = 100;
+      st = 100;
+      maxst = 100
+      weapons = []
+      activeWeapon = null;
+      armor = [];
+      activeArmors = [];
+      items = [];
+      lvl = 0;
+      unlockedLvls = [0];
+
+    }
+
+    //map
+    worldMap = new Map([
+      [0, tutorial]
+    ])
+    class level {
+      constructor(name, width, yMove = false, xMove = false, enemies = [], finishLoot = [], floor) {
+        this.name = name;
+        this.width = width;
+        this.yMove = yMove;
+        this.xMove = xMove;
+        this.enemies = enemies;
+        this.finishLoot = finishLoot;
+        this.futureLoot = futureLoot;
+        this.floor = floor;
+      }
+      display() {
+        for(letter in this.floor) {
+
+        };
+      }
+    }
+    class metalevel {
+      constructor(name, sublevels = []) {
+        this.name = name;
+        this.sublevels = sublevels;
+      }
+    }
+
+    //enemies
+
+    //items
+
+    //i/o
+    function initiate() {
+
+    }</script>
 </body>
 </html>
