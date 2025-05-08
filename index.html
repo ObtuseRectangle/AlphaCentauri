@@ -61,6 +61,10 @@
           0% {transform: translateY(-400px);}
           100% {transform: translateY(4000px);}
         }
+        @keyframes moveRight {
+          0% {left: 6%;}
+          100% {left: 94%}
+        }
         .blinkingBar {
           animation-name: blink;
           animation-duration: 1s;
@@ -77,6 +81,24 @@
           animation-name: falling;
           animation-duration: 10s;
           animation-iteration-count: infinite;
+        }
+        input {
+          width: 75%;
+        }
+        .alignLeft {
+          position: relative;
+        }
+        .centerAlign {
+          left: 50%;
+          position: relative;
+          animation-name: moveRight;
+          animation-iteration-count: infinite;
+          animation-duration: 2.5s;
+          animation-direction: alternate;
+        }
+        .alignRight {
+          left: 95%;
+          position: relative;
         }
         #gameWindow {
           width: 95%;
@@ -230,8 +252,11 @@
         <div class="para1"><h2>Gmail</h2></div>
         <p>Email, short for electronic mail, is a method of exchanging digital messages over the internet. It allows users to send and receive text, documents, images, and other files instantly across the globe. Email is a fundamental tool in both personal and professional communication. It is widely used in workplaces to coordinate projects, share updates, and maintain records of correspondence.
         </p><p>One of the key advantages of email is its speed—messages are delivered within seconds, regardless of the sender's or recipient's location. It also offers convenience, as users can access their inbox from computers, smartphones, or tablets. Many email services provide features like spam filtering, automatic replies, and folders to organize messages efficiently.
-        </p><p>Email is important because it serves as a formal channel of communication, especially in business and education. It is often used to apply for jobs, communicate with customers, confirm appointments, and distribute newsletters. In education, teachers and students use email to exchange assignments, feedback, and announcements.
+        </p>
+        <p><a class="alignLeft">@</a><a class="centerAlign">✉</a><a class="alignRight">@</a></p>
+        <p>Email is important because it serves as a formal channel of communication, especially in business and education. It is often used to apply for jobs, communicate with customers, confirm appointments, and distribute newsletters. In education, teachers and students use email to exchange assignments, feedback, and announcements.
         </p><p>Despite the rise of messaging apps, email remains essential due to its formality and versatility. It creates a written record of conversations, which can be crucial for legal or administrative purposes. Businesses rely on email marketing to reach potential clients and promote their products. On a daily basis, millions of people, including me, check their email to stay informed, connected, and organized.</p>
+        <form><input type="text" value="Want to sell your email to the dark web? Enter it here." autocomplete="email"><input type="submit"></form>
         <div class="para1"><h2>Digital Currency</h2></div>
         <img src="bestBitcoin.png" class="bitcoin">
         <img src="bestBitcoin.png" class="bitcoin">
@@ -481,10 +506,8 @@
       console.log("Hi")
       var aTags = document.querySelectorAll("h2");
       var searchText = text;
-      console.log(aTags)
       for (var i = 0; i < aTags.length; i++) {
         if (aTags[i].innerHTML == searchText) {
-          console.log(aTags[i])
           return aTags[i];
         }
       }
@@ -492,10 +515,9 @@
     const BitcoinWait = async () => {
       var element = getElementByInnerHTML("Digital Currency");
       var position = element.getBoundingClientRect();
-      if(position.top < window.innerHeight && position.bottom >= 0) {
+      if(position.top > 0 && (position.bottom <= window.innerHeight || document.documentElement.clientHeight)) {
         thingsToMove = document.getElementsByClassName("bitcoin")
         for(item of thingsToMove) {
-          console.log(screen.width.toString()+"px")
           item.style.right = (Math.abs(screen.width*Math.random()-10)).toString()+"px"
           await delay(Math.random()*100);
           item.style.width = "5%";
@@ -506,6 +528,7 @@
     }
     window.addEventListener('scroll', BitcoinWait);
     //====Game part====
+    /*
 
     //variables
 
@@ -560,6 +583,6 @@
     //i/o
     function initiate() {
 
-    }</script>
+    }*/</script>
 </body>
 </html>
